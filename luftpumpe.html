@@ -7,7 +7,7 @@
     <title>Luftpumpe</title>
     <style>
         .slider {
-          width: 500px; /* vergrößern Sie die Breite des Schiebereglers */
+          width: 800px; /* vergrößern Sie die Breite des Schiebereglers */
           position: absolute; /* Positionieren Sie den Schieberegler absolut */
           top: 50%; /* Positionieren Sie den Schieberegler in der Mitte der y-Achse */
           left: 50%; /* Positionieren Sie den Schieberegler in der Mitte der x-Achse */
@@ -22,10 +22,46 @@
   .green-background {
     background-color: green;
   }
+
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
       </style>
       
 </head>
 <body>
+    <ul>
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="werkzeugkoffer.html">Werkzeugkoffer</a></li>
+        <li><a href="hilfe.html">Hilfe</a></li>
+      </ul>
     <div>
         <input type="range" min="0" max="10" value="0" class="slider" id="myRange">
         <p>Wert: <span id="value">0</span> Bar</p>
