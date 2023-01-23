@@ -36,6 +36,12 @@ li a:hover {
 .active {
   background-color: #4CAF50;
 }
+.video-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
     </style>
 </head>
 <body bgcolor=#dea710>
@@ -45,6 +51,23 @@ li a:hover {
         <li><a href="videos.html">Videos</a></li>
         <li><a href="hilfe.html">Hilfe</a></li>
       </ul>
+      <div class="video-container">
+        <video id="myVideo" controls>
+          <source src="" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <script>
+        // Get the video file name from session storage
+        var videoName = sessionStorage.getItem("clickedImage") + ".mp4";
+  
+        // Update the video source with the file name
+        document.querySelector("#myVideo source").src = videoName;
+  
+        // Load the video
+        var video = document.querySelector("#myVideo");
+        video.load();
+      </script>
 
     
 </body>
