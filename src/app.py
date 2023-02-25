@@ -4,6 +4,7 @@ import json
 from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
+DEBUG=True
 
 @app.route('/')
 def index():
@@ -34,3 +35,7 @@ def videos():
 @app.route('/werkzeugkoffer')
 def wekzeugkoffer():
    return render_template('werkzeugkoffer.html')
+
+
+if __name__ == '__main__':
+    app.run(debug=DEBUG)
