@@ -54,7 +54,13 @@
 },
 {
 	"nr": 8,
-	"frage": "Was Lehnt in Lucas Zimmer am Schreibtisch?"
+	"frage": "Was Lehnt in Lucas Zimmer am Schreibtisch?",
+	"antworten": [
+		"ein ipad",
+		"das ipad",
+		"ipad",
+		"mein ipad"
+	]
 },
 {
 	"nr": 9,
