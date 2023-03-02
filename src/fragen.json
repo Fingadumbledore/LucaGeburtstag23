@@ -80,17 +80,7 @@
 	"nr": 10,
 	"frage": "Welcher Prozessor wird in dem Luca Pc benutzt?",
 	"antworten": [
-		"pentium 4",
-		"pentium4",
-		"ein pentium 4",
-		"ein pentium4"
-	]
-},
-{
-	"nr": 11,
-	"frage": "Wie viele mikrochips kleben auf dem mainboar?",
-	"antworten": [
-		"5"
+		"core i7"
 	]
 },
 {
