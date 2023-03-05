@@ -22,6 +22,10 @@ def caeser():
 def hilfe():
     return render_template('hilfe.html')
 
+@app.route('/raetsel')
+def raetsel():
+    return render_template('raetsel.html')
+
 @app.route('/luftpumpe')
 def luftpumpe():
     return render_template('luftpumpe.html')
