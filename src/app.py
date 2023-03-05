@@ -3,7 +3,9 @@
 import json
 from flask import Flask, render_template, request, redirect, url_for
 
-app = Flask(__name__)
+app = Flask(__name__,
+            template_folder='sites',
+            static_folder='static')
 DEBUG=True
 
 @app.route('/')
