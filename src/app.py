@@ -46,6 +46,14 @@ def videos():
 def wekzeugkoffer():
    return render_template('werkzeugkoffer.html')
 
+@app.route('/fragen_abschicken', methods=['POST'])
+def fragen_abschicken():
+    buchstarbe = request.form['buchstarbe']
+    wort = request.form['wort']
+    kästchen = request.form['kaestchen']
+
+    return redirect('/raetsel')
+
 
 if __name__ == '__main__':
     app.run(debug=DEBUG)
