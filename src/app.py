@@ -48,7 +48,7 @@ def wekzeugkoffer():
 
 @app.route('/fragen_abschicken', methods=['POST'])
 def fragen_abschicken():
-    buchstarbe = request.form['buchstarbe']
+    buchstabe = request.form['buchstabe']
     wort = request.form['wort']
     kästchen = request.form['kaestchen']
 
