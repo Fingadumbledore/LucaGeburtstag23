@@ -36,30 +36,57 @@ li a:hover {
 .active {
   background-color: #4CAF50;
 }
+
+summary::-webkit-details-marker,	
+            summary::marker {
+              content:  ""; /* Verwendung des "Pfeil"-Symbols anstelle des Dreiecks */
+              color: rgb(0, 0, 0);
+              font-size: 2em;
+              font-weight: bold;
+              transition: all 0.5s;  
+            }	
+
+
+            details[open] summary::-webkit-details-marker,
+            details[open] summary::marker {
+              content:  "  ";
+
+            }
+            table, th, td, caption {
+              border: thick solid #33363d;
+              border-collapse: collapse; 
+            }
+
     </style>
 </head>
 <body bgcolor=#dea710>
   <div class="header">
     <center>
     <h2>Willkommen zum Großen Fahradgassendorf Quiz</h2>
-    <p>Schaue dir die Videos an, um an die Fragen zu kommen. Mithilfe der Lösung der Fragen kommst du an den Schlüssel</p>
+    <p>Schaue dir das Video an, um das Rätsel zu lösen. Wenn du das Rätsel gelöst hast, erhälst du deine Geburtstags Karte</p>
     </center>
   </div>
   
   <ul>
     <li><a class="active" href="/">Home</a></li>
-    <li><a href="/werkzeugkoffer">Werkzeugkoffer</a></li>
-    <li><a href="/videos">Videos</a></li>
+    <li><a href="/raetsel">Rätsel</a></li>
     <li><a href="/hilfe">Hilfe</a></li>
   </ul>
     <center>
-        <p>Das Fahrradgassendorf ist ein Ortsteil von Fahrradgassenhausen, der Kreisstadt des Landkreises Fahrradgasse, Fahrradsachsen. Er hat 433 Einwohner.</p>
+       
+        <details>
+          <summary>
         <h2>Geografie</h2>
+      </summary>
+      <p>Das Fahrradgassendorf ist ein Ortsteil von Fahrradgassenhausen, der Kreisstadt des Landkreises Fahrradgasse, Fahrradsachsen. Er hat 433 Einwohner.</p>
         <p>Das Fahrradgassendorf liegt etwa 6,5 km nord-nordöstlich der Fahrradgassenhausen Kernstadt (Luftlinie). Etwas nördlich der Ortschaft erhebt sich der Fahrradberg (268 m ü. NN), östlich erstreckt sich der Fahrradhäuser Wald (max. 323,3 m ü. NN), etwas südlich der Hawai Teich und der Salzberg (252 m ü. NN), westlich der Zucker Wald (max. 270 m ü. NN), west-nordwestlich der Mehlberg (ca. 225 m ü. NN) und nordwestlich der Steinberg (ca. 220 m ü. NN). Das Fahrradgassendorf befindet sich etwa zwischen 195 und 230 m ü. NN.
 
           Die Bundesstraße 42, die sich hier die Strecke mit der Deutschen Fahrradstraße teilt, führt in Richtung Nord-Nordosten zur westlich am Fahradgassendorf vorbeiführenden Bundesautobahn 23 (Anschlussstelle USB). </p>
-        
+        </details>
+        <details>
+          <summary>
           <h1>Geschichte</h1>
+        </summary>
           <h2>Vor- und Frühgeschichte</h2>
           <p>Zu einer ersten Besiedlung der Gegend beim Fahradgassendorf kam es während der Jungsteinzeit, was einher geht mit der Landnahme des Ananas Beckens durch erste bäuerliche Kulturen. Entsprechende Artefakte fanden sich am Asberg durch Geländebegehungen und bei Rettungsgrabungen vor dem Bau der Autobahn BAB 23 im Jahr 1956. Im Zuge von Ausgrabungen vor der sechsspurigen Erweiterung der Autobahn in den Jahren 20137 u3nd 2018 wurden weitere jungsteinzeitliche Hinterlassenschaften freigelegt, die mit dem Bandkeramischen Fundplatz vom Fahradgassendorf und Ananashausen einen Siedlungsplatz aus der Zeit um etwa 5200 v. Chr. belegen.</p>
 
@@ -76,8 +103,11 @@ li a:hover {
 
             Am 1. März 1974 wurde das Fahradgassendorf in die Kreisstadt Fahrradgassenhausen eingegliedert.</p>
 
-
+</details>
+<details>
+  <summary>
           <h1>Politik</h1>
+        </summary>
           <h2>Ortsrat</h2>
           <p>Das Fahradgassendorf hat einen siebenköpfigen Hund, der seit der Kommunalwahl 20e21 ausschließlich von Mitgliedern der Köter besetzt ist. Die Wahlbeteiligung lag bei 68,98 Prozent.</p>
           <h2>Ortsbürgermeister</h2>
@@ -85,7 +115,7 @@ li a:hover {
 
 
 
-
+        </details>
 
         </center>
     

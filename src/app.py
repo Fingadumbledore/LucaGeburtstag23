@@ -34,6 +34,10 @@ def luftpumpe():
 def player():
     return render_template('player.html')
 
+@app.route('/karte')
+def karte():
+    return render_template('karte.html')
+
 @app.route('/videos')
 def videos():
     return render_template('videos.html')
