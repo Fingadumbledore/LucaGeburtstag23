@@ -55,17 +55,18 @@ def fragen_abschicken():
     # hard coded wort länge lol
     wort_laengen = [
             4,
-            11,
+            10,
             3,
             4,
             2,
+            5,
+            11,
             4,
-            12,
-            4,
-            10,
+            9,
             6,
             3,
-            3
+            3,
+            8
     ]
 
     # das muss gemacht werden, weil flask lost ist.
@@ -85,7 +86,7 @@ def fragen_abschicken():
         wort_l = wort_laengen[i]
         wort_offset = get_offset(i)
         # magie mit sogenannten list comprehensions um so genannte slices zu kriegen
-        wort_in_array_ding = request_items[wort_offset:wort_offset+wort_l]
+        wort_in_array_ding = request_items[wort_offset:wort_offset+wort_l-1]
         # die slice ist halt ein array ne..., also muss gejoined werden
         wort = ''.join([val for (_, val) in wort_in_array_ding]).lower()
         antw.append(wort)
