@@ -69,7 +69,10 @@ li a:hover {
     <li><a href="/raetsel">Rätsel</a></li>
     <li><a href="/hilfe">Hilfe</a></li>
   </ul>
-   <center> <h1>ich bin ein kreuzworträtsel</h1></center>
+   <center> 
+	   <h1>ich bin ein kreuzworträtsel</h1>
+	   <h2>{% if falsch_text %} {{ falsch_text }} {% endif %}</h2>
+   </center>
    <form action="/fragen_abschicken" method="POST">
     <div id="wort1" style="position: relative; left: 25px;">
       <p>1</p>

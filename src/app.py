@@ -1,7 +1,6 @@
 """ Flask app for the application. """
 
 import os
-import re
 import json
 from flask import Flask, render_template, request, redirect, url_for
 
@@ -81,15 +80,21 @@ def fragen_abschicken():
             w += wort_laengen[i]
         return w
 
+    antw = []
+
     for i in range(WORT_ANZAHL):
         wort_l = wort_laengen[i]
         wort_offset = get_offset(i)
-        # get wort from request using offset and wort_l
-        wort = request_items[wort_offset:wort_offset+wort_l]
-        print(wort)
-        print("hier wort zuende")
+        # magie mit sogenannten list comprehensions um so genannte slices zu kriegen
+        wort_in_array_ding = request_items[wort_offset:wort_offset+wort_l]
+        # die slice ist halt ein array ne..., also muss gejoined werden
+        wort = ''.join([val for (_, val) in wort_in_array_ding]).lower()
+        antw.append(wort)
+            
+    false_awnsers = validate(antw)
+    text = 'falsch sind: ' + str(false_awnsers)
     
-    return redirect('/raetsel')
+    return redirect(url_for('raetsel', falsch_text=text))
 
 
 # return list of indexes, where awnser ist false
