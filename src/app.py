@@ -91,6 +91,8 @@ def fragen_abschicken():
         antw.append(wort)
             
     false_awnsers = validate(antw)
+    if not false_awnsers:
+        return redirect(url_for('karte'))
     text = 'falsch sind: ' + str(false_awnsers)
     
     return render_template('raetsel.html', falsch_text=text)
