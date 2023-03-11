@@ -189,5 +189,23 @@ li a:hover {
       <input class="hori" type="text" maxlength="1" name="wort_13_buchstabe_2">
     </div>
     </form>
+    <script>
+	    var hori = document.getElementsByClassName("hori");
+	    var verti = document.getElementsByClassName("verti");
+
+	    function toExecute(e) {
+		    console.log("test")
+		    e.target.replaceWith(e.target.value + '\n');
+	    }
+
+	    for (var i = 0; i < hori.length; i++) {
+		    hori[i].addEventListener("input", toExecute, false)
+	    }
+
+	    for (var i = 0; i < verti.length; i++) {
+		    verti[i].addEventListener("input", toExecute, false)
+	    }
+
+    </script>
 </body>
 </html>
