@@ -41,7 +41,6 @@ def videos():
 
 @app.route('/fragen_abschicken', methods=['POST'])
 def fragen_abschicken():
-    print('test')
     if BACKUP is not None:
         awnsers = []
         for i in range(12):
@@ -94,7 +93,7 @@ def fragen_abschicken():
     false_awnsers = validate(antw)
     text = 'falsch sind: ' + str(false_awnsers)
     
-    return redirect(url_for('raetsel', falsch_text=text))
+    return render_template('raetsel.html', falsch_text=text)
 
 
 # return list of indexes, where awnser ist false
@@ -109,7 +108,7 @@ def validate(awnsers) -> list[int]:
             # https://www.digitalocean.com/community/tutorials/python-find-string-in-list krass
             if awnser not in data[i]['antworten']:
                 print(awnser)
-                false_awnsers.append(i)
+                false_awnsers.append(i+1)
     return false_awnsers
 
 
