@@ -1,6 +1,7 @@
 """ Flask app for the application. """
 
 import os
+import re
 import json
 from flask import Flask, render_template, request, redirect, url_for
 
@@ -9,6 +10,7 @@ app = Flask(__name__,
             static_folder='static')
 DEBUG=True
 BACKUP=os.getenv('BACKUP')
+WORT_ANZAHL = 12
 
 @app.route('/')
 def index():
@@ -40,6 +42,7 @@ def videos():
 
 @app.route('/fragen_abschicken', methods=['POST'])
 def fragen_abschicken():
+    print('test')
     if BACKUP is not None:
         awnsers = []
         for i in range(12):
@@ -49,11 +52,45 @@ def fragen_abschicken():
         if false_awnsers:
             return redirect(url_for('raetsel', false_awnsers=false_awnsers))
         return redirect(url_for('karte'))
+    # ab hier wenn kein backup in kraft
+    
+    # hard coded wort länge lol
+    wort_laengen = [
+            4,
+            11,
+            3,
+            4,
+            2,
+            4,
+            12,
+            4,
+            10,
+            6,
+            3,
+            3
+    ]
 
-    buchstabe = request.form['buchstabe']
-    wort = request.form['wort']
-    kästchen = request.form['kaestchen']
+    # das muss gemacht werden, weil flask lost ist.
+    # request.form.items() ist ein Iterator[tuple[str, str]], keine List[tuple[str, str]]. deswegen muss das so gemacht werden.
+    # man kann halt nicht in einen Iterator indexen, weil er halt durchlaufen werden muss und das nur ein mal kann.
+    request_items = [(key, val) for (key, val) in request.form.items()]
+
+    def get_offset(i):
+        w = 0
+        for i in range(i):
+            w += wort_laengen[i]
+        return w
+
+    for i in range(WORT_ANZAHL):
+        wort_l = wort_laengen[i]
+        wort_offset = get_offset(i)
+        # get wort from request using offset and wort_l
+        wort = request_items[wort_offset:wort_offset+wort_l]
+        print(wort)
+        print("hier wort zuende")
+    
     return redirect('/raetsel')
+
 
 # return list of indexes, where awnser ist false
 def validate(awnsers) -> list[int]:
