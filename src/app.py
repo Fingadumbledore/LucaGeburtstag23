@@ -52,6 +52,9 @@ def fragen_abschicken():
         return redirect(url_for('karte'))
     # ab hier wenn kein backup in kraft
     
+    for k, v in request.form.items():
+        print(k, v)
+    
     # hard coded wort länge lol
     wort_laengen = [
             4,
@@ -86,7 +89,7 @@ def fragen_abschicken():
         wort_l = wort_laengen[i]
         wort_offset = get_offset(i)
         # magie mit sogenannten list comprehensions um so genannte slices zu kriegen
-        wort_in_array_ding = request_items[wort_offset:wort_offset+wort_l-1]
+        wort_in_array_ding = request_items[wort_offset:wort_offset+wort_l]
         # die slice ist halt ein array ne..., also muss gejoined werden
         wort = ''.join([val for (_, val) in wort_in_array_ding]).lower()
         antw.append(wort)

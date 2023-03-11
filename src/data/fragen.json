@@ -50,7 +50,8 @@
 		"antworten": [
 			"eine pizza hawaii",
 			"pizza hawaii",
-			"hawaii pizza"
+			"hawaii pizza",
+			"pizzahawaii"
 		]
 	},
 	{
@@ -81,7 +82,8 @@
 		"nr": 10,
 		"frage": "Welcher Prozessor wird in dem Luca Pc benutzt?",
 		"antworten": [
-			"core i7"
+			"core i7",
+			"corei7"
 		]
 	},
 	{
